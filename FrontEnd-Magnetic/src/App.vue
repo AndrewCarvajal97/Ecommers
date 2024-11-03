@@ -13,7 +13,7 @@
 <script setup>
 /*Importaciones */
 import { ref} from 'vue';
-import Navbar from './components/Navbar.vue';  
+import Navbar from './components/NavbarWeb.vue';  
 </script>
 
 <style scoped>
