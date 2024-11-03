@@ -1,6 +1,6 @@
 <template>
     <div class="buscar" >
-        <input type="text" placeholder="Buscar" v-model="palabraBusqueda"><button @click="EmitirPalabra(palabraBusqueda)" class="lupa"><span class="material-symbols-outlined">search</span></button>
+        <input type="text" placeholder="Buscar" v-model="palabraBusqueda" id="IngresoBuscar"><button @click="Busqueda(palabraBusqueda)" class="lupa"><span class="material-symbols-outlined">search</span></button>
     </div>
 </template>
 
@@ -15,15 +15,19 @@ const props=defineProps({
         default:[]
     }
 })
-const emit = defineEmits(['BuscarPalabra'])
+
 /*Estados y Declaraciones generales*/
 const route=useRoute()
 const router=useRouter()
-const palabraBusqueda=ref()
+const palabraBusqueda=ref('')
 /* Funciones*/
-const EmitirPalabra=(palabraBusqueda)=>{
-    emit('BuscarPalabra',palabraBusqueda)
-}
+const Busqueda = (palabraBusqueda) => {
+    if (palabraBusqueda === '') {
+      router.replace({ path: '/' });
+    } else {
+      router.replace({ query: { buscar: palabraBusqueda } });
+    }
+  };
 
 </script>
 
@@ -32,7 +36,7 @@ const EmitirPalabra=(palabraBusqueda)=>{
         display: flex;
         align-items: center;
         justify-items: center;
-        gap: 2rem;
+        gap: .5rem;
     }
     .buscar input{
         width: 80%;
@@ -42,6 +46,8 @@ const EmitirPalabra=(palabraBusqueda)=>{
         background-color: black;
         height: 2.4rem;
         box-sizing: border-box;
+        cursor: pointer;
+        border-radius: 20px;
     }
     .lupa span{
         color: white;

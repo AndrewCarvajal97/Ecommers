@@ -1,9 +1,10 @@
 <template>
   <header>
-    <Navbar/>
+    <NavbarWeb/>
   </header>
   <section>
     <RouterView />
+    
   </section>
   <footer>
 
@@ -13,9 +14,13 @@
 <script setup>
 /*Importaciones */
 import { ref} from 'vue';
-import Navbar from './components/NavbarWeb.vue';  
+import NavbarWeb from './layouts/NavbarWeb.vue';
+
 </script>
 
 <style scoped>
+header{
+  width: 100%;
+}
 
 </style>

@@ -1,25 +1,17 @@
 <template>
     <nav :class="{ menuSuperior: true, active: buscarMovil }">
       <section class="superior">
-        <div class="menu" >
-            <span class="material-symbols-outlined" v-if="isMobile">menu</span>
+        <div class="menu" v-if="isMobile">
+            <span class="material-symbols-outlined" >menu</span>
         </div>
         <div class="logo" v-if="!buscarMovil || !isMobile">
-          <img src="/img/marcaPersonal/NEGRO SIN FONDO.webp" alt="Logo de la empresa" @click="volverInicio">
+          <LogoSuperior :isMovil="isMobile" @emitirBuscar="eventoBuscarMovil()" />
         </div>
         <div class="buscar" v-if="buscarMovil || !isMobile">
-          <ComponenteBuscar @BuscarPalabra="Busqueda" :listaSugerencias="busquedasComunes" />
+          <ComponenteBuscar  :listaSugerencias="busquedasComunes" />
         </div>
         <div class="iconosLaterales">
-            <div v-if="isMobile">
-                <span class="material-symbols-outlined" @click="toggleBuscarMovil" v-if="!buscarMovil">search</span>
-                <span class="material-symbols-outlined" @click="toggleBuscarMovil" v-else>close</span>
-            </div>
-          <span class="material-symbols-outlined">person</span>
-          <span class="material-symbols-outlined">shopping_cart</span>
-          <span class="material-symbols-outlined">favorite</span>
-          <span class="material-symbols-outlined">headphones</span>
-          <span class="material-symbols-outlined">language</span>
+            <IconosLaterales :isMobile="isMobile" :buscarMovil="buscarMovil" @mostrarBuscar="toggleBuscarMovil"/>
         </div>
       </section>
       <section class="inferior">
@@ -33,12 +25,12 @@
   <script setup>
   /* Imports */
   import { ref, onMounted, onBeforeUnmount } from 'vue';
-  import { useRouter } from 'vue-router';
-  import ComponenteBuscar from './ComponenteBuscar.vue';
+  import ComponenteBuscar from '../components/ComponenteBuscar.vue';
+  import IconosLaterales from '../components/IconosLaterales.vue';
+  import LogoSuperior from '../components/LogoSuperior.vue';
   
   /* Estados */
-  const categoria = ref();
-  const router = useRouter();
+  
   const buscarMovil = ref(false);
   const isMobile = ref(window.innerWidth <= 600);
   
@@ -68,37 +60,17 @@
   ];
   
   /* Funciones */
-  const volverInicio = () => {
+  const eventoBuscarMovil = () => {
     buscarMovil.value = !buscarMovil.value;
-    if (!buscarMovil.value) {
-      router.replace('/');
-    }
   };
   
-  const toggleBuscarMovil = () => {
+  const toggleBuscarMovil = (estado) => {
     if (isMobile.value) {
-      buscarMovil.value = !buscarMovil.value;
+      buscarMovil.value = !estado;
     }
   };
   
-  const Busqueda = (palabra) => {
-    if (palabra.trim() === '') {
-      router.replace({ path: '/' });
-    } else {
-      router.replace({ query: { buscar: palabra } });
-    }
-  };
   
-  const mostrarSugerencias = (palabra) => {
-    if (palabra.trim().length > 3) {
-      const sugerencias = busquedasComunes.filter(sugerencia =>
-        sugerencia.toLowerCase().includes(palabra.toLowerCase())
-      );
-      console.log(sugerencias);
-      return sugerencias;
-    }
-    return [];
-  };
   </script>
   
   <style scoped>
@@ -111,25 +83,20 @@
   }
   
   .superior {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: start;
     align-items: center;
     flex-wrap: nowrap;
-    padding: 0 1rem;
   }
   
   .logo {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
-  
-  .logo img {
-    height: 30px;
-  }
-  
+
   .buscar {
     flex: 2;
     display: flex;
@@ -140,7 +107,6 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    gap: 1rem;
   }
   
   .inferior {
@@ -153,12 +119,14 @@
     gap: 1rem;
   }
   .menu{
-    margin-right: 20px;
+    margin:0 10px;
   }
   
   @media (max-width: 600px) {
     .buscar {
       display: none;
+      flex: 1;
+      width: 90%;
     }
   
     .menuSuperior.active .buscar {

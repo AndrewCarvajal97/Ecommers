@@ -1,20 +1,21 @@
 <template>
     <div class="contenedor">
         <div v-if="isMobile">
-            <span class="material-symbols-outlined" @click="mostrarBuscar" v-if="!buscarMovil">search</span>
-            <span class="material-symbols-outlined" @click="mostrarBuscar" v-else>close</span>
+            <IconoGoogle @eventoClick="devolverEstado()" icon="search" v-if="!buscarMovil"/>
+            <IconoGoogle @eventoClick="devolverEstado()" icon="close" v-else/>
         </div>
-        <span class="material-symbols-outlined">person</span>
-        <span class="material-symbols-outlined">shopping_cart</span>
-        <span class="material-symbols-outlined">favorite</span>
-        <span class="material-symbols-outlined">headphones</span>
-        <span class="material-symbols-outlined">language</span>
+        <IconoGoogle ruta="redes" icon="person"/>
+        <IconoGoogle ruta="carrito" icon="shopping_cart"/>
+        <IconoGoogle ruta="favoritos" icon="favorite"/>
+        <IconoGoogle ruta="conctacto" icon="headphones"/>  
     </div>
 </template>
 
 <script setup>
 /*Imports */
-import { ref } from 'vue';
+import { ref} from 'vue';
+
+import IconoGoogle from './IconoGoogle.vue';
 /*Props y Emits */
 const props =defineProps({
     isMobile:{
@@ -27,14 +28,27 @@ const props =defineProps({
         }
 })
 
-const emit=defineEmits([mostrarBuscar])
+const emit=defineEmits(["mostrarBuscar"])
 
-const mostrarBuscar=()=>{
-    return props.isMobile
+const devolverEstado=()=>{
+    emit("mostrarBuscar",props.buscarMovil)
 }
 
 </script>
 
 <style  scoped>
+.contenedor{
+    display: flex;
+    gap: 1rem;
+}
+.contenedor span{
+    cursor: pointer;
+}
+
+@media(width <=600px){
+    .contenedor{
+        gap: .2rem;
+    }
+}
 
 </style>
