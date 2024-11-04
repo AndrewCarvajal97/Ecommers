@@ -2,7 +2,8 @@
     <nav :class="{ menuSuperior: true, active: buscarMovil }">
       <section class="superior">
         <div class="menu" v-if="isMobile">
-            <span class="material-symbols-outlined" >menu</span>
+            <span class="material-symbols-outlined" @click="abrirSider()">menu</span>
+            <NavbarMovil :class="{'siderBar':true, 'activo':Sider}" @ocultarSider="abrirSider"  />
         </div>
         <div class="logo" v-if="!buscarMovil || !isMobile">
           <LogoSuperior :isMovil="isMobile" @emitirBuscar="eventoBuscarMovil()" />
@@ -28,10 +29,12 @@
   import ComponenteBuscar from '../components/ComponenteBuscar.vue';
   import IconosLaterales from '../components/IconosLaterales.vue';
   import LogoSuperior from '../components/LogoSuperior.vue';
+  import NavbarMovil from './NavbarMovil.vue';
   
   /* Estados */
   
   const buscarMovil = ref(false);
+  const Sider=ref(false)
   const isMobile = ref(window.innerWidth <= 600);
   
   const updateIsMobile = () => {
@@ -69,6 +72,9 @@
       buscarMovil.value = !estado;
     }
   };
+  const abrirSider=()=>{
+    Sider.value=!Sider.value
+  }
   
   
   </script>
@@ -80,6 +86,9 @@
     flex-direction: column;
     box-sizing: border-box;
     margin: 1rem 0;
+  }
+  .siderBar.activo{
+    transform: translateX(0);
   }
   
   .superior {

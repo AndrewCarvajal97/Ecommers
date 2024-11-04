@@ -1,6 +1,7 @@
 <template>
   <header>
     <NavbarWeb/>
+    
   </header>
   <section>
     <RouterView />
@@ -15,6 +16,7 @@
 /*Importaciones */
 import { ref} from 'vue';
 import NavbarWeb from './layouts/NavbarWeb.vue';
+import NavbarMovil from './layouts/NavbarMovil.vue';
 
 </script>
 
