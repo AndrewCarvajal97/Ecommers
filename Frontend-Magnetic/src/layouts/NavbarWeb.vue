@@ -17,7 +17,7 @@
       </section>
       <section class="inferior">
         <div class="categorias" v-for="(n, index) in numeros" :key="index">
-          <RouterLink :to="`/Category/${n}`">categoria {{ n }}</RouterLink>
+          <RouterLink :to="`/categoria/${n}`">{{ n }}</RouterLink>
         </div>
       </section>
     </nav>
@@ -51,7 +51,7 @@
   });
   
   /* Data */
-  const numeros = 8;
+  const numeros = ["Todo","Mujer","Curvy","Niños","Hombre","Hogar","Belleza"];
   const busquedasComunes = [
     "algo",
     "comounas",

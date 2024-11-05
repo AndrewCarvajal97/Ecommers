@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="/img/marcaPersonal/NEGRO SIN FONDO.webp" alt="Logo de la empresa" @click="volverInicio(isMovil)" :style="{width: size}">
+        <img src="/img/marcaPersonal/NEGRO_SIN_FONDO.webp" alt="Logo de la empresa" @click="volverInicio(isMovil)" :style="{width: size}">
     </div>
 </template>
 

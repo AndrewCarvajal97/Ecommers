@@ -6,7 +6,8 @@ import Categoria from '../layouts/Categoria.vue'
 
 const routes = [
   { path: '/', component: Magnetic },
-  {path:'/Category/:name',component:Categoria},
+  {path:'/categoria/:name',component:Categoria},
+  {path:'/categoria/:name/:seccion/:tipo',component:Categoria},
   { path: '/Product/:id', component: DetalleProducto },
 ]
 
