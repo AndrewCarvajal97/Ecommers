@@ -24,8 +24,10 @@ const router=useRouter()
 const volverInicio=(isMovil)=>{
     if(isMovil){
         emit("emitirBuscar")
+    }else{
+        router.replace('/')
     }
-    router.replace('/')
+    
 }
 </script>
 
