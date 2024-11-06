@@ -21,6 +21,11 @@
         </div>
       </section>
     </nav>
+    <div :class="{'cerrar-container':true}" v-if="isMobile">
+      <div :class="{'cerrar':true,'visto':Sider}">
+        <IconoGoogle @click="abrirSider()" icon="first_page"/>
+      </div>
+    </div>
   </template>
   
   <script setup>
@@ -30,6 +35,7 @@
   import IconosLaterales from '../components/IconosLaterales.vue';
   import LogoSuperior from '../components/LogoSuperior.vue';
   import NavbarMovil from './NavbarMovil.vue';
+  import IconoGoogle from '../components/IconoGoogle.vue';
   
   /* Estados */
   
@@ -130,6 +136,19 @@
   .menu{
     margin:0 10px;
   }
+
+  .cerrar-container {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    transform: translateX(-400px); /* Añadido un valor por defecto */
+  }
+  .cerrar-container .visto {
+      transform: translateX(400px);
+      transition: all 1s ease;
+  /* Mueve el elemento 100px a la derecha */
+  }
+  
   
   @media (max-width: 600px) {
     .buscar {

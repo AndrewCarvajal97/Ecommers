@@ -11,17 +11,18 @@
                     <p :id="categoria">{{ categoria }}</p>
                 </div>
             </div>
-            <div 
+            <RouterLink 
             v-for="(seccion,code) in listaSecciones" 
             :key="code" 
-            class="rutas" 
-            @click="cambiarSeccion(seccion)" 
+            class="rutas"
+            @click="mostrarSider()"
+            :to="verDatosCategoria('General',code,'Todo')"
             v-if="mostrarSecciones">
                 <div class="logoSeccion">
                     <img :src="seccion['imagen']" alt="Logo de la categoria">
                 </div>
                 <p>{{ code }} </p>
-            </div>
+            </RouterLink>
             <div 
             v-else  
             v-for="(Categoria,index) in categorias" 
@@ -58,17 +59,6 @@
             </div>
 
         </div>
-        <div v-else>
-            <div class="seccionSuperior"><IconoGoogle  icon="close" @click="cambiarSeccion('')" /><p>{{ secciones }}</p></div>
-            <div v-for="(categoria,index) in categorias" class="rutas">
-                <p v-if="index!==0">{{ categoria }} de pruebas</p>
-            </div>
-        </div>
-        <div class="cerrar-container">
-            <div class="cerrar">
-                <IconoGoogle @eventoClick="mostrarSider()" icon="first_page"/>
-            </div>
-        </div>
     </section>
 </template>
 
@@ -78,7 +68,6 @@
 /*Imports */
 import { ref,defineEmits } from 'vue';
 import { useRouter } from 'vue-router';
-import IconoGoogle from '../components/IconoGoogle.vue';
 /*Estados y declaraciones generales */
 const mostrar=ref(false)
 const mostrarSecciones=ref(true)
@@ -568,9 +557,7 @@ const mostrarSider=()=>{
     emit("ocultarSider")
 }
 
-const cambiarSeccion=(seccionSeleccionada)=>{
-    secciones.value=seccionSeleccionada
-}
+
 
 const seleccionarCategoria=(categoria)=>{
     
@@ -605,7 +592,8 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
     display: flex;
     flex-direction: column;
     width: 80%;
-    height: 100vh;
+    height: 120vh;
+    padding: 1rem 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -667,18 +655,7 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
 .activa{
     background-color: rgba(100, 181, 246, 0.25);
 }
-.cerrar-container {
-    position: -webkit-sticky; /* Safari */
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(100%);
-}
-.cerrar{
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
+
 
 .logoSeccion{
     display: flex;
@@ -703,13 +680,7 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
     flex: .8;
 }
 
-.seccionSuperior{
-    display:flex;
-    justify-content: flex-start;
-    gap: 3rem;
-    margin: 0 2rem;
-    align-items: center;
-}
+
 .contenedorTitulo{
     display: flex;
     flex: .2;

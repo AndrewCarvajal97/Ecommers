@@ -4,7 +4,7 @@
 
 <script setup>
 /*imports */
-import { defineEmits } from 'vue';
+
 import { useRouter } from 'vue-router';
 /*props y emits */
 const props=defineProps({
