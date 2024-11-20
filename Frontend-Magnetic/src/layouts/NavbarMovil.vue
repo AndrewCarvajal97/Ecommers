@@ -38,7 +38,7 @@
                         <div 
                         class="contenedorTitulo" 
                         v-if="(numberCode===Titulo)">
-                            <h2 >{{ Titulo }}</h2>
+                            <h2 >{{ Titulo  }}  </h2>
                         </div>
                         <div 
                         class="caja" >
@@ -90,464 +90,10 @@ const props = defineProps({
     },
     objetoCategorias:{
         type: Object,
-        default:{
-    "Mujer": {
-        "id": 1,
-        "Novedades": [
-            {
-                "nombre": "Camisas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/mujer/camisas"
-            },
-            {
-                "nombre": "Pantalones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/mujer/pantalones"
-            },
-            {
-                "nombre": "Conjuntos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/mujer/conjuntos"
-            },
-            {
-                "nombre": "Blusas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/mujer/blusas"
-            },
-            {
-                "nombre": "Vestidos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/mujer/vestidos"
-            }
-        ],
-        "Ofertas": [
-            {
-                "nombre": "Ultimas ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/mujer/ultimas-ofertas"
-            },
-            {
-                "nombre": "Mejores Ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/mujer/mejores-ofertas"
-            },
-            {
-                "nombre": "Usuarios Nuevos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/mujer/usuarios-nuevos"
-            },
-            {
-                "nombre": "Ofertas de la Semana",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/mujer/ofertas-de-la-semana"
-            },
-            {
-                "nombre": "Todas las ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/mujer/todas-las-ofertas"
-            }
-        ],
-        "Exclusivas": [
-            {
-                "nombre": "Ultimas Colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/mujer/ultimas-colecciones"
-            },
-            {
-                "nombre": "Colecciones Limitadas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/mujer/colecciones-limitadas"
-            },
-            {
-                "nombre": "Colecciones de la Temporada",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/mujer/colecciones-de-la-temporada"
-            },
-            {
-                "nombre": "Proximas colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/mujer/proximas-colecciones"
-            }
-        ],
-        "Nuevos": [
-            {
-                "nombre": "Ultimos Diseños",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/mujer/ultimos-disenos"
-            },
-            {
-                "nombre": "Diseño Personalizado",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/mujer/diseno-personalizado"
-            }
-        ]
-    },
-    "Hombre": {
-        "id": 2,
-        "Novedades": [
-            {
-                "nombre": "Camisas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/hombre/camisas"
-            },
-            {
-                "nombre": "Pantalones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/hombre/pantalones"
-            },
-            {
-                "nombre": "Conjuntos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/hombre/conjuntos"
-            },
-            {
-                "nombre": "Camisetas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/hombre/camisetas"
-            },
-            {
-                "nombre": "Chaquetas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/hombre/chaquetas"
-            }
-        ],
-        "Ofertas": [
-            {
-                "nombre": "Ultimas ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/hombre/ultimas-ofertas"
-            },
-            {
-                "nombre": "Mejores Ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/hombre/mejores-ofertas"
-            },
-            {
-                "nombre": "Usuarios Nuevos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/hombre/usuarios-nuevos"
-            },
-            {
-                "nombre": "Ofertas de la Semana",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/hombre/ofertas-de-la-semana"
-            },
-            {
-                "nombre": "Todas las ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/hombre/todas-las-ofertas"
-            }
-        ],
-        "Exclusivas": [
-            {
-                "nombre": "Ultimas Colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/hombre/ultimas-colecciones"
-            },
-            {
-                "nombre": "Colecciones Limitadas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/hombre/colecciones-limitadas"
-            },
-            {
-                "nombre": "Colecciones de la Temporada",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/hombre/colecciones-de-la-temporada"
-            },
-            {
-                "nombre": "Proximas colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/hombre/proximas-colecciones"
-            }
-        ],
-        "Nuevos": [
-            {
-                "nombre": "Ultimos Diseños",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/hombre/ultimos-disenos"
-            },
-            {
-                "nombre": "Diseño Personalizado",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/hombre/diseno-personalizado"
-            }
-        ]
-    },
-    "Niños": {
-        "id": 3,
-        "Novedades": [
-            {
-                "nombre": "Camisas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/ninos/camisas"
-            },
-            {
-                "nombre": "Pantalones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/ninos/pantalones"
-            },
-            {
-                "nombre": "Conjuntos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/ninos/conjuntos"
-            },
-            {
-                "nombre": "Camisetas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/ninos/camisetas"
-            },
-            {
-                "nombre": "Vestidos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/ninos/vestidos"
-            }
-        ],
-        "Ofertas": [
-            {
-                "nombre": "Ultimas ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/ninos/ultimas-ofertas"
-            },
-            {
-                "nombre": "Mejores Ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/ninos/mejores-ofertas"
-            },
-            {
-                "nombre": "Usuarios Nuevos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/ninos/usuarios-nuevos"
-            },
-            {
-                "nombre": "Ofertas de la Semana",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/ninos/ofertas-de-la-semana"
-            },
-            {
-                "nombre": "Todas las ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/ninos/todas-las-ofertas"
-            }
-        ],
-        "Exclusivas": [
-            {
-                "nombre": "Ultimas Colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/ninos/ultimas-colecciones"
-            },
-            {
-                "nombre": "Colecciones Limitadas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/ninos/colecciones-limitadas"
-            },
-            {
-                "nombre": "Colecciones de la Temporada",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/ninos/colecciones-de-la-temporada"
-            },
-            {
-                "nombre": "Proximas colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/ninos/proximas-colecciones"
-            }
-        ],
-        "Nuevos": [
-            {
-                "nombre": "Ultimos Diseños",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/ninos/ultimos-disenos"
-            },
-            {
-                "nombre": "Diseño Personalizado",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/ninos/diseno-personalizado"
-            }
-        ]
-    },
-    "Parejas": {
-        "id": 4,
-        "Novedades": [
-            {
-                "nombre": "Conjuntos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/parejas/conjuntos"
-            },
-            {
-                "nombre": "Camisetas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/parejas/camisetas"
-            },
-            {
-                "nombre": "Pantalones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/parejas/pantalones"
-            },
-            {
-                "nombre": "Accesorios",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/parejas/accesorios"
-            },
-            {
-                "nombre": "Chaquetas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/parejas/chaquetas"
-            }
-        ],
-        "Ofertas": [
-            {
-                "nombre": "Ultimas ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/parejas/ultimas-ofertas"
-            },
-            {
-                "nombre": "Mejores Ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/parejas/mejores-ofertas"
-            },
-            {
-                "nombre": "Usuarios Nuevos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/parejas/usuarios-nuevos"
-            },
-            {
-                "nombre": "Ofertas de la Semana",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/parejas/ofertas-de-la-semana"
-            },
-            {
-                "nombre": "Todas las ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/parejas/todas-las-ofertas"
-            }
-        ],
-        "Exclusivas": [
-            {
-                "nombre": "Ultimas Colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/parejas/ultimas-colecciones"
-            },
-            {
-                "nombre": "Colecciones Limitadas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/parejas/colecciones-limitadas"
-            },
-            {
-                "nombre": "Colecciones de la Temporada",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/parejas/colecciones-de-la-temporada"
-            },
-            {
-                "nombre": "Proximas colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/parejas/proximas-colecciones"
-            }
-        ],
-        "Nuevos": [
-            {
-                "nombre": "Ultimos Diseños",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/parejas/ultimos-disenos"
-            },
-            {
-                "nombre": "Diseño Personalizado",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/parejas/diseno-personalizado"
-            }
-        ]
-    },
-    "Curvy": {
-        "id": 5,
-        "Novedades": [
-            {
-                "nombre": "Vestidos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/curvy/vestidos"
-            },
-            {
-                "nombre": "Pantalones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/curvy/pantalones"
-            },
-            {
-                "nombre": "Conjuntos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/curvy/conjuntos"
-            },
-            {
-                "nombre": "Blusas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/curvy/blusas"
-            },
-            {
-                "nombre": "Faldas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/novedades/curvy/faldas"
-            }
-        ],
-        "Ofertas": [
-            {
-                "nombre": "Ultimas ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/curvy/ultimas-ofertas"
-            },
-            {
-                "nombre": "Mejores Ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/curvy/mejores-ofertas"
-            },
-            {
-                "nombre": "Usuarios Nuevos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/curvy/usuarios-nuevos"
-            },
-            {
-                "nombre": "Ofertas de la Semana",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/curvy/ofertas-de-la-semana"
-            },
-            {
-                "nombre": "Todas las ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/ofertas/curvy/todas-las-ofertas"
-            }
-        ],
-        "Exclusivas": [
-            {
-                "nombre": "Ultimas Colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/curvy/ultimas-colecciones"
-            },
-            {
-                "nombre": "Colecciones Limitadas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/curvy/colecciones-limitadas"
-            },
-            {
-                "nombre": "Colecciones de la Temporada",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/curvy/colecciones-de-la-temporada"
-            },
-            {
-                "nombre": "Proximas colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/colecciones-exclusivas/curvy/proximas-colecciones"
-            }
-        ],
-        "Nuevos": [
-            {
-                "nombre": "Ultimos Diseños",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/curvy/ultimos-disenos"
-            },
-            {
-                "nombre": "Diseño Personalizado",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
-                "url": "/nuevos-disenos/curvy/diseno-personalizado"
-            }
-        ]
-    }}   
+        default:{}
+    }   
     }
-})
+)
 const emit=defineEmits(["ocultarSider"])
 /*Funciones */
 const mostrarSider=()=>{
@@ -591,8 +137,8 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
 .siderBar{
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 120vh;
+    width: 60%;
+    height: 100%;
     padding: 1rem 0;
     position: absolute;
     left: 0;
@@ -622,13 +168,14 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
     align-items: center;
     width: 100%;
     height: 20vh;
-    margin: .2rem 0;
+    margin: 3rem 0;
+   
 }
 
 .tipos{
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     overflow: scroll;
     width: 95%;
     margin: 0 1rem;
@@ -645,7 +192,7 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
     align-items: center;
     justify-content: start;
     text-align: center;
-    height: 70%;
+    height: 50%;
     border-radius: 50%;
 }
 .tiposCategorias p{
@@ -708,7 +255,7 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
 }
 .categoriasBurbujas{
     width: 100%;
-    height: 80%;
+    height: 100%;
 }
 .inactiva{
     display: none;
