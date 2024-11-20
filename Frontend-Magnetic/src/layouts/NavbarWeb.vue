@@ -157,8 +157,7 @@
     scrollbar-width: none;
     display: flex;
     justify-content: space-around;
-    margin: 1rem auto;
-    
+    margin: .5rem auto;
     gap: 1rem;
   }
   .menu{

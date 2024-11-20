@@ -1,48 +1,38 @@
 <template>
-  <div class="contenedor" @click="cambiarEstadoSlider">
-    <header>
-      <NavbarWeb :slider="estadoSliderBar"/>
-    </header>
-    <section class="contenido">
-      <RouterView />
-    </section>
-    <footer>
-
-    </footer>
-  </div>
-  
+    <v-app>
+    <div class="contenedor" @click="cambiarEstadoSlider">
+      <header>
+        <NavbarWeb :slider="estadoSliderBar" />
+      </header>
+      <section class="contenido">
+        <ProductList />
+        <CarritoDeCompra id="burbujaCarritoCompra"/>
+      </section>
+      <footer></footer>
+    </div>
+  </v-app>
 </template>
 
 <script setup>
-/*Importaciones */
-import { ref} from 'vue';
+/* Importaciones */
+import { ref } from 'vue';
 import NavbarWeb from './layouts/NavbarWeb.vue';
+import ProductList from './components/ProductList.vue';
+import CarritoDeCompra from './layouts/CarritoDeCompra.vue';
+import Cart from './components/Cart.vue';
 
-/*Estados */
-const estadoSliderBar=ref(false)
+/* Estados */
+const estadoSliderBar = ref(false);
 
-/*Funciones */
-const cambiarEstadoSlider=()=>{
-  estadoSliderBar.value=!estadoSliderBar.value
-}
+/* Funciones */
+const cambiarEstadoSlider = () => {
+  estadoSliderBar.value = !estadoSliderBar.value;
+};
 </script>
-
-
 <style scoped>
-.contenedor{
-  display: grid;
-  height: 100dvh;
-  grid-template-rows: auto 1fr auto;
-}
-.contenido{
-min-height: 1000px;
-}
-header{
-  width: 100%;
-}
-footer{
-  min-height: 100px;
-  background-color: aqua;
-}
-
+ #burbujaCarritoCompra{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+ }
 </style>

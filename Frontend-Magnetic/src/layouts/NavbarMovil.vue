@@ -8,7 +8,7 @@
                 :class="{'tiposCategorias':true,'activa':categoria==categoriaSeleccionada }" 
                 @click="seleccionarCategoria(categoria)"
                 >
-                    <p :id="categoria">{{ categoria }}</p>
+                    <p :id="categoria">{{ categoria }} </p>
                 </div>
             </div>
             <RouterLink 
@@ -159,7 +159,6 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
     height: 100%;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
 }
 
 .categorias .rutas{
@@ -175,30 +174,24 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
 .tipos{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem;
     overflow: scroll;
-    width: 95%;
-    margin: 0 1rem;
-    padding: 0 1rem;
+    justify-content: space-between;
+    width: 80%;
+    min-height: 50px;
+    margin-left: 1rem;
     box-sizing: border-box;
-    height: 3rem;
     scrollbar-width: none;
-    gap: 1rem;
-    border-bottom: solid 1px grey;
-    
+    border-bottom: solid 1px grey;  
 }
 .tiposCategorias{
     display: flex;
     align-items: center;
-    justify-content: start;
     text-align: center;
-    height: 50%;
+    height: 100%;
     border-radius: 50%;
 }
-.tiposCategorias p{
-    width: 3.5rem;
-    font-size: .8rem;
-}
+
 .activa{
     background-color: rgba(100, 181, 246, 0.25);
 }
@@ -224,7 +217,7 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
 .rutas p{
     font-size: .8rem;
     text-align: center;
-    flex: .8;
+    flex: 1;
 }
 
 

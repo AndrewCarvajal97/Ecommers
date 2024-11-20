@@ -35,12 +35,15 @@ const props =defineProps({
         align-items: center;
     }
     .Imagen{
-        width: 90px;
-        height: 90px;
+        width: 60px;
+        height: 60px;
     }
     .Imagen img{
         width: 100%;
         height: 100%;
         border-radius: 100%;
+    }
+    h2{
+        font-size: .8rem;
     }
 </style>
