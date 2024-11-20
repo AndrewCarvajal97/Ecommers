@@ -152,6 +152,7 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
   	font-optical-sizing: auto;
   	font-weight: 600;
   	font-style: normal;
+    z-index: 2;
 }
 
 .categorias{
@@ -179,7 +180,7 @@ const verDatosCategoria=(categoria,seccion,burbuja)=>
     justify-content: space-between;
     width: 80%;
     min-height: 50px;
-    margin-left: 1rem;
+    margin-left: ;
     box-sizing: border-box;
     scrollbar-width: none;
     border-bottom: solid 1px grey;  

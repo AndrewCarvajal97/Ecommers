@@ -1,8 +1,8 @@
 <template>
     <v-app>
     <div class="contenedor" @click="cambiarEstadoSlider">
-      <header>
-        <NavbarWeb :slider="estadoSliderBar" />
+      <header class="cabecera">
+        <NavbarWeb  :slider="estadoSliderBar"  />
       </header>
       <section class="contenido">
         <ProductList />
@@ -30,6 +30,8 @@ const cambiarEstadoSlider = () => {
 };
 </script>
 <style scoped>
+
+
  #burbujaCarritoCompra{
   position: fixed;
   bottom: 50px;

@@ -169,6 +169,7 @@
     left: 55%;
     top: 50%;
     transform: translateX(-1200px); /* Añadido un valor por defecto */
+    z-index: 2;
   }
   .cerrar-container .visto {
       transform: translateX(1200px);

@@ -15,49 +15,49 @@ export const objetoCategorias={
         "Novedades": [
             {
                 "nombre": "Camisas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/senorita-mostrando-signo-v-ojo-camisa-rosa-luciendo-bonita_176474-18099.jpg?t=st=1732142912~exp=1732146512~hmac=ff09660f16b35d17124677e2ab1cefd0b62dae39d3852268b58a53c86303ce2e&w=360",
                 "url": "/novedades/mujer/camisas"
             },
             {
                 "nombre": "Pantalones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/fotos-premium/modelo-blue-jeans_1122-5707.jpg?w=360",
                 "url": "/novedades/mujer/pantalones"
             },
             {
                 "nombre": "Conjuntos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/modelo-moda-lindo-mujer_1328-1130.jpg?t=st=1732143060~exp=1732146660~hmac=7d4694fbd9407dc11b9a847a8940b8d726b884ed0e00fb60c6d056aa67c24571&w=360",
                 "url": "/novedades/mujer/conjuntos"
             },
             {
                 "nombre": "Blusas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/vista-frontal-senorita-camisa-blanca-pantalon-negro-falda-azul-sobre-blanco_140725-16745.jpg?t=st=1732143113~exp=1732146713~hmac=938428522bbb454f7f1cda3160a864b9fae67a8f91ee0ac5d4047397618463c7&w=740",
                 "url": "/novedades/mujer/blusas"
             },
             {
                 "nombre": "Vestidos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/mujer-sexy-vestirse_144627-16286.jpg?t=st=1732143140~exp=1732146740~hmac=7df27ff975498cd06dc18beb1472c030afeecd307267caeec3309b904c67b5dd&w=360",
                 "url": "/novedades/mujer/vestidos"
             }
         ],
         "Ofertas": [
             {
                 "nombre": "Ultimas ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/pequenos-paquetes-blancos-inscripcion_23-2147955466.jpg?t=st=1732143250~exp=1732146850~hmac=1c56255e13bbd3bdb5ba606b9d23023281f168a501d8dc50ce605461e7aa98f7&w=740",
                 "url": "/ofertas/mujer/ultimas-ofertas"
             },
             {
                 "nombre": "Mejores Ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/optimista-atractiva-mujer-feliz-sonriente-cabello-largo-rubio-sudadera-capucha-apuntando-dedo-arriba-sonriendo-optimista_176420-33589.jpg?t=st=1732143320~exp=1732146920~hmac=a209ceddfd6d90db57557427fb2dc4271c5711f57b960cee54c0f4fb3c6e5f10&w=740",
                 "url": "/ofertas/mujer/mejores-ofertas"
             },
             {
                 "nombre": "Usuarios Nuevos",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/vector-gratis/diseno-nueva-llegada-concepto-confeti_23-2147882362.jpg?t=st=1732143371~exp=1732146971~hmac=4a63265300f14d9df7dacb8f39ed6755670eacc871374d5a7c8347b82f383068&w=740",
                 "url": "/ofertas/mujer/usuarios-nuevos"
             },
             {
                 "nombre": "Ofertas de la Semana",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/lay-flat-caja-luz-cyber-monday-laptop-cafe_23-2148657715.jpg?t=st=1732143434~exp=1732147034~hmac=d1bf37edf45ce01d9dede9f3906df109b6c5214f8319799b690f55a9228ce44b&w=740",
                 "url": "/ofertas/mujer/ofertas-de-la-semana"
             },
             {
