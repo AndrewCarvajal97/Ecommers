@@ -1,12 +1,9 @@
 <template>
-    <div>
-        <h1>este sera el home </h1>
-       
-    </div>
+    <ProductList />
 </template>
 
 <script setup>
-    
+    import ProductList from '../components/ProductList.vue';
 </script>
 
 <style scoped>

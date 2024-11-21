@@ -5,7 +5,8 @@
         <NavbarWeb  :slider="estadoSliderBar"  />
       </header>
       <section class="contenido">
-        <ProductList />
+        <RouterView />
+        
         <CarritoDeCompra id="burbujaCarritoCompra"/>
       </section>
       <footer></footer>

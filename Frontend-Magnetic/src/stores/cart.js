@@ -1,14 +1,33 @@
+// stores/cartStore.js
 import { defineStore } from 'pinia';
 
 export const useCartStore = defineStore('cart', {
     state: () => ({
-        items: [], // Productos en el carrito
-        discount: 0, // Descuento aplicado
-        shippingCost: 0, // Costo de envío
-        promotionalCampaign: null // Nueva propiedad para campaña promocional
+        items: [],
+        discount: 0,
+        shippingCost: 0,
+        promotionalCampaign: null
     }),
     actions: {
+        // Método simplificado para agregar al carrito desde ProductList
+        addToCart(product) {
+            // Si no se especifica una cantidad, usar 1 por defecto
+            const productToAdd = {
+                ...product,
+                quantity: 1,
+                size: product.size || '', 
+                color: product.color || ''
+            };
+            
+            this.addItem(productToAdd);
+        },
+
         addItem(product) {
+            // Calcular el precio con descuento si existe
+            const discountedPrice = product.discount > 0 
+                ? Math.round(product.salePrice * (1 - product.discount / 100))
+                : product.salePrice;
+
             const existing = this.items.find(item => 
                 item.id === product.id && 
                 item.size === product.size && 
@@ -16,34 +35,45 @@ export const useCartStore = defineStore('cart', {
             );
             
             if (existing) {
-                existing.quantity += 1;
+                // Solo actualizamos la cantidad y mantenemos el resto igual
+                existing.quantity += product.quantity || 1;
             } else {
+                // Creamos un nuevo item con el precio calculado
                 this.items.push({ 
-                    ...product, 
-                    quantity: 1,
-                    // Campos adicionales para mayor detalle
-                    image: product.image || '', // Imagen del producto
-                    size: product.size || '', // Talla
-                    gender: product.gender || '', // Género
-                    color: product.color || '', // Color
-                    reference: product.reference || '', // Referencia
-                    purchasePrice: product.purchasePrice || 0, // Valor de compra
-                    salePrice: product.salePrice || 0, // Valor de venta
-                    promotionalCampaign: product.promotionalCampaign || null, // Campaña de promoción
-                    discount: product.discount || 0 // Descuento específico del producto
+                    ...product,
+                    quantity: product.quantity || 1,
+                    finalPrice: discountedPrice,
+                    // Aseguramos que todos los campos necesarios estén presentes
+                    image: product.image || '',
+                    size: product.size || '',
+                    gender: product.gender || '',
+                    color: product.color || '',
+                    reference: product.reference || '',
+                    purchasePrice: product.purchasePrice || 0,
+                    salePrice: product.salePrice,
+                    originalPrice: product.salePrice, // Guardamos el precio original
+                    promotionalCampaign: product.promotionalCampaign || null,
+                    discount: product.discount || 0
                 });
             }
             this.calculateShipping();
         },
+
+        // Los demás métodos permanecen igual...
         removeItem(productId, size, color) {
             this.items = this.items.filter(item => 
-                !(item.id === productId && item.size === size && item.color === color)
+                !(item.id === productId && 
+                  item.size === size && 
+                  item.color === color)
             );
             this.calculateShipping();
         },
+
         updateItemQuantity(productId, size, color, quantity) {
             const item = this.items.find(item => 
-                item.id === productId && item.size === size && item.color === color
+                item.id === productId && 
+                item.size === size && 
+                item.color === color
             );
             
             if (item) {
@@ -55,20 +85,29 @@ export const useCartStore = defineStore('cart', {
             }
             this.calculateShipping();
         },
+
         clearCart() {
             this.items = [];
             this.discount = 0;
             this.shippingCost = 0;
             this.promotionalCampaign = null;
         },
+
         applyDiscount(discountPercentage, campaignName = null) {
             this.discount = Math.min(Math.max(discountPercentage, 0), 100);
             this.promotionalCampaign = campaignName;
+            // Recalcular los precios finales cuando se aplica un descuento general
+            this.items.forEach(item => {
+                const productDiscount = Math.max(item.discount || 0, this.discount);
+                item.finalPrice = Math.round(item.originalPrice * (1 - productDiscount / 100));
+            });
         },
+
         calculateShipping() {
-            const subtotal = this.subtotal;
-            this.shippingCost = subtotal > 1000 ? 0 : 100;
+            // Ejemplo: Envío gratis para compras mayores a 100000
+            this.shippingCost = this.subtotal > 100000 ? 0 : 12000;
         },
+
         checkout() {
             if (this.items.length === 0) {
                 throw new Error('El carrito está vacío');
@@ -89,15 +128,27 @@ export const useCartStore = defineStore('cart', {
     },
     getters: {
         subtotal() {
-            return this.items.reduce((total, item) => total + item.salePrice * item.quantity, 0);
+            return this.items.reduce((total, item) => {
+                // Usar el precio con descuento del producto si existe
+                const priceWithProductDiscount = item.finalPrice || item.salePrice;
+                return total + (priceWithProductDiscount * item.quantity);
+            }, 0);
         },
+
         totalItems() {
             return this.items.reduce((total, item) => total + item.quantity, 0);
         },
+
         total() {
-            const discountAmount = this.subtotal * (this.discount / 100);
-            return this.subtotal - discountAmount + this.shippingCost;
+            // Aplicar el descuento general después de los descuentos por producto
+            const subtotalAfterProductDiscounts = this.subtotal;
+            const generalDiscountAmount = this.discount > 0 
+                ? Math.round(subtotalAfterProductDiscounts * (this.discount / 100))
+                : 0;
+            
+            return subtotalAfterProductDiscounts - generalDiscountAmount + this.shippingCost;
         },
+
         isEmpty() {
             return this.items.length === 0;
         }

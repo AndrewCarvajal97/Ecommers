@@ -1,230 +1,195 @@
+<!-- views/ProductList.vue -->
 <template>
-    <v-container>
+  <div class="product-list">
+    <v-container fluid>
       <v-row>
-        <v-col v-for="product in products" :key="product.id" cols="12" sm="6" md="4">
-          <v-card>
-            <v-img 
-              v-if="product.image" 
-              :src="product.image" 
-              height="200" 
-              cover
-            ></v-img>
+        <v-col cols="12" sm="3">
+          <v-select
+            v-model="pageSize"
+            :items="[5, 10, 15, 20]"
+            label="Productos por página"
+            @update:model-value="updatePagination"
+          ></v-select>
+        </v-col>
+        
+        <v-col cols="12" sm="3" class="d-flex align-center">
+          <v-badge 
+            :content="cartStore.totalItems" 
+            color="primary"
+            overlap
+          >
+            <v-btn icon @click="showCart">
+              <v-icon>mdi-cart</v-icon>
+            </v-btn>
+          </v-badge>
+        </v-col>
+      </v-row>
+
+      <v-row v-if="paginatedProducts.length === 0">
+        <v-col>
+          <v-alert type="info" class="text-center">
+            No se encontraron productos
+          </v-alert>
+        </v-col>
+      </v-row>
+
+      <v-row v-else>
+        <v-col 
+          v-for="product in paginatedProducts" 
+          :key="product.id" 
+          cols="12" 
+          sm="6" 
+          md="4"
+        >
+          <v-card class="product-card">
+            <!-- Envolver la imagen en un div con evento click para navegar al detalle -->
+            <div @click="goToProductDetail(product.id)">
+              <v-img 
+                :src="product.image" 
+                :alt="product.name"
+                height="250"
+                cover
+                class="cursor-pointer"
+              ></v-img>
+            </div>
             
-            <v-card-title>{{ product.name }}</v-card-title>
+            <v-card-title 
+              @click="goToProductDetail(product.id)" 
+              class="cursor-pointer"
+            >
+              {{ product.name }}
+            </v-card-title>
             
             <v-card-subtitle>
-              <div>Referencia: {{ product.reference }}</div>
-              <div>Precio: ${{ product.salePrice.toLocaleString() }}</div>
+              {{ product.shortDescription }}
             </v-card-subtitle>
             
             <v-card-text>
-              <v-row>
-                <!-- Selección de Talla -->
-                <v-col cols="12">
-                  <v-select
-                    v-model="productSelections[product.id].size"
-                    :items="product.availableSizes"
-                    label="Talla"
-                    outlined
-                    dense
-                  ></v-select>
-                </v-col>
-                
-                <!-- Selección de Color -->
-                <v-col cols="12">
-                  <v-select
-                    v-model="productSelections[product.id].color"
-                    :items="product.availableColors"
-                    label="Color"
-                    outlined
-                    dense
-                  ></v-select>
-                </v-col>
-                
-                <!-- Información Adicional -->
-                <v-col cols="12">
-                  <v-chip-group>
-                    <v-chip 
-                      v-if="product.promotionalCampaign" 
-                      color="primary" 
-                      label
-                    >
-                      {{ product.promotionalCampaign }}
-                    </v-chip>
-                    <v-chip 
-                      v-if="product.discount > 0" 
-                      color="success" 
-                      label
-                    >
-                      {{ product.discount }}% OFF
-                    </v-chip>
-                  </v-chip-group>
-                </v-col>
-                
-                <!-- Cantidad y Acciones -->
-                <v-col cols="12">
-                  <v-row>
-                    <v-col>
-                      <v-btn-group>
-                        <v-btn 
-                          icon 
-                          @click.stop="decreaseQuantity(product)"
-                        >
-                          <v-icon>mdi-minus</v-icon>
-                        </v-btn>
-                        
-                        <v-text-field
-                          v-model.number="productQuantities[product.id]"
-                          type="number"
-                          min="0"
-                          :max="product.stock"
-                          style="width: 70px"
-                          hide-details
-                          dense
-                          @change="updateQuantity(product, $event)"
-                        ></v-text-field>
-                        
-                        <v-btn 
-                          icon 
-                          @click.stop="increaseQuantity(product)"
-                        >
-                          <v-icon>mdi-plus</v-icon>
-                        </v-btn>
-                      </v-btn-group>
-                    </v-col>
-                    
-                    <v-col cols="auto">
-                      <v-btn 
-                        color="primary" 
-                        @click.stop="addToCart(product)"
-                        :disabled="!canAddToCart(product)"
-                      >
-                        Agregar al Carrito
-                      </v-btn>
-                    </v-col>
-                  </v-row>
-                </v-col>
-              </v-row>
+              <div class="d-flex justify-space-between align-center">
+                <div>
+                  <span 
+                    v-if="product.discount > 0" 
+                    class="text-decoration-line-through mr-2 text-grey"
+                  >
+                    ${{ product.salePrice.toLocaleString() }}
+                  </span>
+                  <span class="text-h6">
+                    ${{ calculateDiscountedPrice(product).toLocaleString() }}
+                  </span>
+                </div>
+                <v-chip 
+                  v-if="product.discount > 0" 
+                  color="green" 
+                  small
+                >
+                  -{{ product.discount }}%
+                </v-chip>
+              </div>
             </v-card-text>
+            
+            <v-card-actions>
+              <v-btn 
+                color="primary" 
+                block
+                @click="addToCart(product)"
+              >
+                Agregar al carrito
+              </v-btn>
+            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
+
+      <v-row class="mt-4" v-if="paginatedProducts.length > 0">
+        <v-col>
+          <div class="text-center">
+            <v-pagination
+              v-model="currentPage"
+              :length="totalPages"
+              @update:model-value="updatePagination"
+            ></v-pagination>
+          </div>
+        </v-col>
+      </v-row>
     </v-container>
+  </div>
 </template>
-  
+
 <script setup>
-import { ref, reactive } from 'vue';
-import { useCartStore } from '../stores/cart';
-  
+import { ref, onMounted } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useRouter } from 'vue-router';
+import { useProductStore } from '../stores/productStore.js';
+import { useCartStore } from '../stores/cart.js';
+
+// Inicializar router y stores
+const router = useRouter();
+const productStore = useProductStore();
 const cartStore = useCartStore();
-  
-const products = [
-  { 
-    id: 1, 
-    name: 'Camiseta Básica', 
-    reference: 'CAMISETA-001',
-    salePrice: 45000,
-    purchasePrice: 20000,
-    stock: 10,
-    gender: 'Unisex',
-    image: '/path/to/camiseta-image.jpg',
-    availableSizes: ['S', 'M', 'L', 'XL'],
-    availableColors: ['Blanco', 'Negro', 'Azul', 'Rojo'],
-    promotionalCampaign: 'Verano 2024',
-    discount: 10
-  },
-  { 
-    id: 2, 
-    name: 'Pantalón Deportivo', 
-    reference: 'PANTALON-002',
-    salePrice: 65000,
-    purchasePrice: 30000,
-    stock: 5,
-    gender: 'Hombre',
-    image: '/path/to/pantalon-image.jpg',
-    availableSizes: ['S', 'M', 'L', 'XL'],
-    availableColors: ['Negro', 'Gris', 'Azul'],
-    promotionalCampaign: null,
-    discount: 0
-  },
-  { 
-    id: 3, 
-    name: 'Chaqueta Casual', 
-    reference: 'CHAQUETA-003',
-    salePrice: 120000,
-    purchasePrice: 60000,
-    stock: 8,
-    gender: 'Mujer',
-    image: '/path/to/chaqueta-image.jpg',
-    availableSizes: ['XS', 'S', 'M', 'L'],
-    availableColors: ['Beige', 'Verde', 'Café'],
-    promotionalCampaign: 'Fin de Temporada',
-    discount: 15
-  },
-];
 
-// Objeto para trackear cantidades de cada producto
-const productQuantities = ref(
-  products.reduce((acc, product) => {
-    acc[product.id] = 1;
-    return acc;
-  }, {})
-);
+// Destructuramos referencias reactivas del store de productos
+const { 
+  paginatedProducts, 
+  totalPages
+} = storeToRefs(productStore);
 
-// Objeto para trackear selecciones de talla y color
-const productSelections = reactive(
-  products.reduce((acc, product) => {
-    acc[product.id] = {
-      size: product.availableSizes[0],
-      color: product.availableColors[0]
-    };
-    return acc;
-  }, {})
-);
-  
+// Sincronizar estados locales con el store
+const currentPage = ref(productStore.currentPage);
+const pageSize = ref(productStore.pageSize);
+
+onMounted(() => {
+  // Inicializar el store con los datos iniciales
+  productStore.initializeProducts();
+});
+
+// Método para actualizar paginación
+const updatePagination = () => {
+  productStore.currentPage = currentPage.value;
+  productStore.pageSize = pageSize.value;
+};
+
+// Calcular precio con descuento
+const calculateDiscountedPrice = (product) => {
+  return product.discount > 0
+    ? Math.round(product.salePrice * (1 - product.discount / 100))
+    : product.salePrice;
+};
+
+// Agregar al carrito
 const addToCart = (product) => {
-  const quantity = productQuantities.value[product.id] || 1;
-  const selection = productSelections[product.id];
+  // Preparar el producto para agregar al carrito
+  const productToAdd = {
+    ...product,
+    quantity: 1
+  };
   
-  // Añadir múltiples unidades de una vez
-  for (let i = 0; i < quantity; i++) {
-    cartStore.addItem({
-      ...product,
-      size: selection.size,
-      color: selection.color
-    });
-  }
-  
-  // Resetear cantidad a 1 después de añadir
-  productQuantities.value[product.id] = 1;
+  cartStore.addToCart(productToAdd);
 };
 
-const canAddToCart = (product) => {
-  const selection = productSelections[product.id];
-  return selection.size && selection.color;
+// Navegar al detalle del producto
+const goToProductDetail = (productId) => {
+  router.push({ 
+    name: 'ProductDetail', 
+    params: { id: productId } 
+  });
 };
 
-const increaseQuantity = (product) => {
-  const currentQuantity = productQuantities.value[product.id] || 1;
-  if (currentQuantity < product.stock) {
-    productQuantities.value[product.id] = currentQuantity + 1;
-  }
-};
-
-const decreaseQuantity = (product) => {
-  const currentQuantity = productQuantities.value[product.id] || 1;
-  if (currentQuantity > 1) {
-    productQuantities.value[product.id] = currentQuantity - 1;
-  }
-};
-
-const updateQuantity = (product, event) => {
-  const newQuantity = Number(event.target.value);
-  if (newQuantity > 0 && newQuantity <= product.stock) {
-    productQuantities.value[product.id] = newQuantity;
-  } else {
-    // Restablecer a 1 si el valor no es válido
-    productQuantities.value[product.id] = 1;
-  }
+// Método para mostrar el carrito (opcional)
+const showCart = () => {
+  router.push({ name: 'Cart' });
 };
 </script>
+
+<style scoped>
+.product-card {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+</style>

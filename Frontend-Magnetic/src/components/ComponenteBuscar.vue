@@ -1,65 +1,89 @@
+<!-- components/Search.vue -->
 <template>
-    <div class="buscar" >
-        <input type="text" placeholder="Buscar" v-model="palabraBusqueda" id="IngresoBuscar"><button @click="Busqueda(palabraBusqueda)" class="lupa"><span class="material-symbols-outlined">search</span></button>
+    <div class="buscar">
+      <input 
+        type="text" 
+        placeholder="Buscar" 
+        v-model="palabraBusqueda" 
+        id="IngresoBuscar"
+        @input="buscarEnTiempoReal"
+        @keyup.enter="Busqueda()"
+      >
+      <button 
+        @click="Busqueda()" 
+        class="lupa"
+      >
+        <span class="material-symbols-outlined">search</span>
+      </button>
     </div>
-</template>
-
-<script setup>
-/*Importaciones */
-import { ref } from 'vue';
-import { useRoute,useRouter } from 'vue-router';
-/*Props */
-const props=defineProps({
-    listaSugerencias:{
-        type:Array,
-        default:[]
-    }
-})
-
-/*Estados y Declaraciones generales*/
-const route=useRoute()
-const router=useRouter()
-const palabraBusqueda=ref('')
-/* Funciones*/
-const Busqueda = (palabraBusqueda) => {
-    if (palabraBusqueda === '') {
-      router.replace({ path: '/' });
+  </template>
+  
+  <script setup>
+  import { ref, watchEffect } from 'vue';
+  import { useProductStore } from '../stores/productStore.js';
+  
+  const productStore = useProductStore();
+  
+  const palabraBusqueda = ref('');
+  
+  const buscarEnTiempoReal = () => {
+    if (palabraBusqueda.value.trim() === '') {
+      productStore.clearSearch();
     } else {
-      router.replace({ query: { buscar: palabraBusqueda } });
+      productStore.searchProducts(palabraBusqueda.value);
     }
   };
-
-</script>
-
-<style  scoped>
-    .buscar{
-        display: flex;
-        align-items: center;
-        justify-items: center;
-        gap: .5rem;
+  
+  const Busqueda = () => {
+    if (palabraBusqueda.value.trim() === '') {
+      productStore.clearSearch();
+    } else {
+      productStore.searchProducts(palabraBusqueda.value);
     }
-    .buscar input{
-        width: 80%;
-        height: 2rem;
+  };
+  
+  // Opcional: Método para limpiar búsqueda
+  const limpiarBusqueda = () => {
+    palabraBusqueda.value = '';
+    productStore.clearSearch();
+  };
+  </script>
+  
+  <style scoped>
+  .buscar {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    gap: 0.5rem;
+  }
+  .buscar input {
+    width: 80%;
+    height: 2rem;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+  }
+  .lupa {
+    background-color: black;
+    height: 2.4rem;
+    width: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+  }
+  .lupa span {
+    color: white;
+  }
+  @media (max-width: 600px) {
+    .buscar {
+      width: 100%;
+      margin: auto;
+      gap: 0;
     }
-    .lupa{
-        background-color: black;
-        height: 2.4rem;
-        box-sizing: border-box;
-        cursor: pointer;
-        border-radius: 20px;
+    .buscar input {
+      width: 65%;
     }
-    .lupa span{
-        color: white;
-    }
-    @media(width<=600px){
-        .buscar{
-            width: 100%;
-            margin: auto;
-            gap: 0;
-        }
-        .buscar input{
-            width: 65%;
-        }
-    }
-</style>
+  }
+  </style>
