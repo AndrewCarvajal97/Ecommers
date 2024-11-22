@@ -62,41 +62,41 @@ export const objetoCategorias={
             },
             {
                 "nombre": "Todas las ofertas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/vista-frontal-joven-atractiva-dama-camisa-colorida-flor-disenada-falda-azul-paquetes-compras-blanco_140725-18470.jpg?t=st=1732157853~exp=1732161453~hmac=1d500dc58fcdd9200b1d62111cb218de181a1ad38a57aa79362acaac66383cbd&w=740",
                 "url": "/ofertas/mujer/todas-las-ofertas"
             }
         ],
         "Exclusivas": [
             {
                 "nombre": "Ultimas Colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/grupo-chicas-guapas-tablero-vacio_329181-4564.jpg?t=st=1732158012~exp=1732161612~hmac=8250b18471e530237fd519edb2676041bb0c7ea350a434d410b859fcaef1fef7&w=740",
                 "url": "/colecciones-exclusivas/mujer/ultimas-colecciones"
             },
             {
                 "nombre": "Colecciones Limitadas",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/dos-jovenes-hermosas-chicas-morenas-bonito-vestido-brillante-verano-moda_158538-15226.jpg?t=st=1732157941~exp=1732161541~hmac=2470a75537752398aaf1d0c4242e7cc5b00cdd0ec47f48000063582c29a86553&w=740",
                 "url": "/colecciones-exclusivas/mujer/colecciones-limitadas"
             },
             {
                 "nombre": "Colecciones de la Temporada",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/dos-chicas-felices-traje-moda-rosa-posando-estudio-sobre-fondo-blanco-lindos-amigos-divirtiendose-caminando-saltando_273443-3633.jpg?t=st=1732158064~exp=1732161664~hmac=56ec3479efaf303f520e4c3794bc1c7715098a49b5d50abee26c9fa913bc5ba0&w=740",
                 "url": "/colecciones-exclusivas/mujer/colecciones-de-la-temporada"
             },
             {
                 "nombre": "Proximas colecciones",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/psd-gratis/retrato-nina-joven-mascara-cara_23-2150164271.jpg?t=st=1732158118~exp=1732161718~hmac=92d87e30d8b219a215e7f1b9ad9c128fe309b8e0bdfee08c8ed9a25426a8d4d3&w=740",
                 "url": "/colecciones-exclusivas/mujer/proximas-colecciones"
             }
         ],
         "Nuevos": [
             {
                 "nombre": "Ultimos Diseños",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/dos-jovenes-hermosas-chicas-sonrientes-ropa-moda-verano-sexy-mujer-despreocupada-modelos-positivos_158538-4544.jpg?t=st=1732158289~exp=1732161889~hmac=3b186fc5cabda87bda5de8db100f66f87013d9979fe085684d3b8d34696acb23&w=740",
                 "url": "/nuevos-disenos/mujer/ultimos-disenos"
             },
             {
                 "nombre": "Diseño Personalizado",
-                "img": "/img/marcaPersonal/NEGRO_SIN_FONDO.webp",
+                "img": "https://img.freepik.com/foto-gratis/chica-morena-posando-blanco_158538-8394.jpg?t=st=1732158358~exp=1732161958~hmac=2b42f198c7210daec571e83e8b74a8d5889b052dde283bd618c62b1fc5a93422&w=360",
                 "url": "/nuevos-disenos/mujer/diseno-personalizado"
             }
         ]

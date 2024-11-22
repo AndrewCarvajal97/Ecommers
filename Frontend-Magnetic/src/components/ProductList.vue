@@ -1,9 +1,8 @@
-<!-- views/ProductList.vue -->
 <template>
   <div class="product-list">
     <v-container fluid>
       <v-row>
-        <v-col cols="12" sm="3">
+        <v-col cols="12" sm="2">
           <v-select
             v-model="pageSize"
             :items="[5, 10, 15, 20]"
@@ -12,17 +11,41 @@
           ></v-select>
         </v-col>
         
-        <v-col cols="12" sm="3" class="d-flex align-center">
-          <v-badge 
-            :content="cartStore.totalItems" 
-            color="primary"
-            overlap
-          >
-            <v-btn icon @click="showCart">
-              <v-icon>mdi-cart</v-icon>
-            </v-btn>
-          </v-badge>
+        <v-col cols="12" sm="3">
+          <v-select
+            :items="priceRanges"
+            label="Rango de Precio"
+            @update:model-value="filterByPriceRange"
+          ></v-select>
         </v-col>
+        
+        <v-col cols="12" sm="2">
+          <v-select
+            :items="['', 'Hombre', 'Mujer','Unisex']"
+            label="Género"
+            @update:model-value="filterByGender"
+          ></v-select>
+        </v-col>
+        
+        <v-col cols="12" sm="2">
+          <v-select
+            :items="sortOptions"
+            label="Ordenar por Precio"
+            @update:model-value="sortByPrice"
+          ></v-select>
+        </v-col>
+        
+        <v-col cols="12" sm="3">
+          <v-btn 
+            color="secondary" 
+            block 
+            @click="clearAllFilters"
+          >
+            Limpiar Filtros
+          </v-btn>
+        </v-col>
+        
+        
       </v-row>
 
       <v-row v-if="paginatedProducts.length === 0">
@@ -42,15 +65,29 @@
           md="4"
         >
           <v-card class="product-card">
-            <!-- Envolver la imagen en un div con evento click para navegar al detalle -->
-            <div @click="goToProductDetail(product.id)">
+            <div class="image-carousel-container">
               <v-img 
-                :src="product.image" 
+                :src="product.image[product.currentImageIndex]" 
                 :alt="product.name"
                 height="250"
                 cover
                 class="cursor-pointer"
+                @click="goToProductDetail(product.id)"
               ></v-img>
+              
+              <div class="image-dots">
+                <v-btn 
+                  v-for="(img, index) in product.image" 
+                  :key="index"
+                  icon 
+                  size="x-small"
+                  class="mx-1"
+                  :class="{ 'active-dot': product.currentImageIndex === index }"
+                  @click="changeProductImage(product, index)"
+                >
+                  <v-icon>mdi-circle</v-icon>
+                </v-btn>
+              </div>
             </div>
             
             <v-card-title 
@@ -137,9 +174,28 @@ const {
 const currentPage = ref(productStore.currentPage);
 const pageSize = ref(productStore.pageSize);
 
+// Configuración de filtros y ordenamiento
+const priceRanges = [
+  { title: 'Todos los Precios', value: null },
+  { title: '$0 - $50', value: { min: 0, max: 50 } },
+  { title: '$50 - $100', value: { min: 50, max: 100 } },
+  { title: '$100 - $200', value: { min: 100, max: 200 } },
+  { title: 'Más de $200', value: { min: 200, max: Infinity } }
+];
+
+const sortOptions = [
+  { title: 'Precio: Menor a Mayor', value: 'asc' },
+  { title: 'Precio: Mayor a Menor', value: 'desc' }
+];
+
 onMounted(() => {
   // Inicializar el store con los datos iniciales
   productStore.initializeProducts();
+  
+  // Añadir índice de imagen actual a cada producto
+  paginatedProducts.value.forEach(product => {
+    product.currentImageIndex = 0;
+  });
 });
 
 // Método para actualizar paginación
@@ -153,6 +209,36 @@ const calculateDiscountedPrice = (product) => {
   return product.discount > 0
     ? Math.round(product.salePrice * (1 - product.discount / 100))
     : product.salePrice;
+};
+
+// Cambiar imagen del producto
+const changeProductImage = (product, index) => {
+  product.currentImageIndex = index;
+};
+
+// Filtros y ordenamiento
+const filterByPriceRange = (range) => {
+  if (range) {
+    productStore.filterByPriceRange(range.min, range.max);
+  } else {
+    productStore.clearAllFilters();
+  }
+};
+
+const filterByGender = (gender) => {
+  if (gender) {
+    productStore.filterByGender(gender);
+  } else {
+    productStore.clearAllFilters();
+  }
+};
+
+const sortByPrice = (order) => {
+  productStore.sortByPrice(order);
+};
+
+const clearAllFilters = () => {
+  productStore.clearAllFilters();
 };
 
 // Agregar al carrito
@@ -191,5 +277,33 @@ const showCart = () => {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.image-carousel-container {
+  position: relative;
+}
+
+.image-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+.mx-1{
+  background-color: rgb(238, 247, 247);
+  max-height: 11px;
+  max-width: 11px;
+}
+.image-dots .v-btn {
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
+}
+
+.image-dots .v-btn.active-dot {
+  background-color: black;
 }
 </style>

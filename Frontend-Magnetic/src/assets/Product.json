@@ -8,7 +8,12 @@
         "purchasePrice": 20000,
         "stock": 10,
         "gender": "Unisex",
-        "image": "/path/to/camiseta-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Camiseta básica de algodón 100% con corte clásico.",
         "longDescription": "Camiseta versátil ideal para cualquier ocasión. Fabricada con algodón de alta calidad, ofrece comodidad y durabilidad. Su diseño clásico la hace perfecta para combinar con cualquier outfit.",
         "availableSizes":["S","M","L","XL"],
@@ -29,7 +34,12 @@
         "purchasePrice": 45000,
         "stock": 15,
         "gender": "Unisex",
-        "image": "/path/to/jogger-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Jogger deportivo con tejido técnico y acabado premium.",
         "longDescription": "Pantalón jogger diseñado para máxima comodidad y estilo. Combina un diseño deportivo moderno con materiales técnicos de alta calidad. Perfecto tanto para hacer ejercicio como para un look casual.",
         "availableSizes":["S","M","L","XL"],
@@ -51,7 +61,12 @@
         "purchasePrice": 65000,
         "stock": 8,
         "gender": "Hombre",
-        "image": "/path/to/bomber-image.jpg",
+       "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Chaqueta bomber moderna con diseño urbano.",
         "longDescription": "Chaqueta bomber de corte moderno, ideal para looks casuales y urbanos. Confeccionada con materiales de alta calidad que proporcionan abrigo y estilo.",
         "availableSizes": ["M", "L", "XL"],
@@ -73,7 +88,12 @@
         "purchasePrice": 40000,
         "stock": 12,
         "gender": "Mujer",
-        "image": "/path/to/vestido-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Vestido casual de línea A con estampado floral.",
         "longDescription": "Vestido versátil con estampado floral delicado. Perfecto para ocasiones informales o para combinar con una chaqueta para un look más formal.",
         "availableSizes": ["XS", "S", "M", "L"],
@@ -95,7 +115,12 @@
         "purchasePrice": 35000,
         "stock": 20,
         "gender": "Unisex",
-        "image": "/path/to/sudadera-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Sudadera oversize con diseño minimalista.",
         "longDescription": "Sudadera de corte amplio con diseño minimalista. Perfecta para días de descanso o para un look streetwear casual.",
         "availableSizes": ["S", "M", "L", "XL"],
@@ -117,7 +142,12 @@
         "purchasePrice": 25000,
         "stock": 25,
         "gender": "Unisex",
-        "image": "/path/to/shorts-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Shorts técnicos para entrenamiento.",
         "longDescription": "Shorts de alto rendimiento diseñados para máxima comodidad durante el ejercicio. Tecnología de absorción de humedad y secado rápido.",
         "availableSizes": ["S", "M", "L"],
@@ -139,7 +169,12 @@
         "purchasePrice": 50000,
         "stock": 15,
         "gender": "Hombre",
-        "image": "/path/to/camisa-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Camisa formal de corte slim fit.",
         "longDescription": "Camisa elegante de corte slim fit, perfecta para ocasiones formales o de oficina. Confeccionada con tejido de alta calidad que garantiza comodidad y estilo.",
         "availableSizes": ["S", "M", "L", "XL"],
@@ -161,7 +196,12 @@
         "purchasePrice": 30000,
         "stock": 30,
         "gender": "Mujer",
-        "image": "/path/to/leggings-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Leggings de compresión para entrenamiento.",
         "longDescription": "Leggings de alta compresión con tecnología de absorción de humedad. Diseñados para máximo rendimiento durante el ejercicio, con ajuste perfecto y diseño moderno.",
         "availableSizes": ["XS", "S", "M", "L"],
@@ -183,7 +223,12 @@
         "purchasePrice": 20000,
         "stock": 50,
         "gender": "Unisex",
-        "image": "/path/to/gorra-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Gorra técnica con protección UV.",
         "longDescription": "Gorra técnica diseñada para máxima protección solar durante actividades al aire libre. Tecnología de absorción de humedad y secado rápido.",
         "availableSizes": ["Única"],
@@ -205,7 +250,12 @@
         "purchasePrice": 100000,
         "stock": 5,
         "gender": "Mujer",
-        "image": "/path/to/abrigo-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Abrigo largo de corte elegante.",
         "longDescription": "Abrigo largo y sofisticado, perfecto para las noches frías. Diseño atemporal que combina elegancia y funcionalidad.",
         "availableSizes": ["S", "M", "L"],
@@ -227,7 +277,12 @@
         "purchasePrice": 20000,
         "stock": 10,
         "gender": "Unisex",
-        "image": "/path/to/camiseta-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Camiseta básica de algodón 100% con corte clásico.",
         "longDescription": "Camiseta versátil ideal para cualquier ocasión. Fabricada con algodón de alta calidad, ofrece comodidad y durabilidad. Su diseño clásico la hace perfecta para combinar con cualquier outfit.",
         "availableSizes":["S","M","L","XL"],
@@ -248,7 +303,12 @@
         "purchasePrice": 45000,
         "stock": 15,
         "gender": "Unisex",
-        "image": "/path/to/jogger-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Jogger deportivo con tejido técnico y acabado premium.",
         "longDescription": "Pantalón jogger diseñado para máxima comodidad y estilo. Combina un diseño deportivo moderno con materiales técnicos de alta calidad. Perfecto tanto para hacer ejercicio como para un look casual.",
         "availableSizes":["S","M","L","XL"],
@@ -270,7 +330,12 @@
         "purchasePrice": 65000,
         "stock": 8,
         "gender": "Hombre",
-        "image": "/path/to/bomber-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Chaqueta bomber moderna con diseño urbano.",
         "longDescription": "Chaqueta bomber de corte moderno, ideal para looks casuales y urbanos. Confeccionada con materiales de alta calidad que proporcionan abrigo y estilo.",
         "availableSizes": ["M", "L", "XL"],
@@ -292,7 +357,12 @@
         "purchasePrice": 40000,
         "stock": 12,
         "gender": "Mujer",
-        "image": "/path/to/vestido-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Vestido casual de línea A con estampado floral.",
         "longDescription": "Vestido versátil con estampado floral delicado. Perfecto para ocasiones informales o para combinar con una chaqueta para un look más formal.",
         "availableSizes": ["XS", "S", "M", "L"],
@@ -314,7 +384,12 @@
         "purchasePrice": 35000,
         "stock": 20,
         "gender": "Unisex",
-        "image": "/path/to/sudadera-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Sudadera oversize con diseño minimalista.",
         "longDescription": "Sudadera de corte amplio con diseño minimalista. Perfecta para días de descanso o para un look streetwear casual.",
         "availableSizes": ["S", "M", "L", "XL"],
@@ -336,7 +411,12 @@
         "purchasePrice": 25000,
         "stock": 25,
         "gender": "Unisex",
-        "image": "/path/to/shorts-image.jpg",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Shorts técnicos para entrenamiento.",
         "longDescription": "Shorts de alto rendimiento diseñados para máxima comodidad durante el ejercicio. Tecnología de absorción de humedad y secado rápido.",
         "availableSizes": ["S", "M", "L"],
@@ -357,8 +437,15 @@
         "salePrice": 99900,
         "purchasePrice": 50000,
         "stock": 15,
-        "gender": "Hombre",
-        "image": "/path/to/camisa-image.jpg",
+        "gender": "Mujer",
+        "section": "Novedades", 
+        "category": "Camisas",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Camisa formal de corte slim fit.",
         "longDescription": "Camisa elegante de corte slim fit, perfecta para ocasiones formales o de oficina. Confeccionada con tejido de alta calidad que garantiza comodidad y estilo.",
         "availableSizes": ["S", "M", "L", "XL"],
@@ -380,7 +467,14 @@
         "purchasePrice": 30000,
         "stock": 30,
         "gender": "Mujer",
-        "image": "/path/to/leggings-image.jpg",
+        "section": "Novedades", 
+        "category": "Camisas",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Leggings de compresión para entrenamiento.",
         "longDescription": "Leggings de alta compresión con tecnología de absorción de humedad. Diseñados para máximo rendimiento durante el ejercicio, con ajuste perfecto y diseño moderno.",
         "availableSizes": ["XS", "S", "M", "L"],
@@ -401,8 +495,15 @@
         "salePrice": 39900,
         "purchasePrice": 20000,
         "stock": 50,
-        "gender": "Unisex",
-        "image": "/path/to/gorra-image.jpg",
+        "gender": "Mujer",
+        "section": "Novedades", 
+        "category": "Camisas",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Gorra técnica con protección UV.",
         "longDescription": "Gorra técnica diseñada para máxima protección solar durante actividades al aire libre. Tecnología de absorción de humedad y secado rápido.",
         "availableSizes": ["Única"],
@@ -424,7 +525,14 @@
         "purchasePrice": 100000,
         "stock": 5,
         "gender": "Mujer",
-        "image": "/path/to/abrigo-image.jpg",
+        "section": "Novedades", 
+        "category": "Camisas",
+        "image":[
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "/path/to/image2.jpg",
+                        "https://img.freepik.com/foto-gratis/primer-plano-madre-e-hija-patineta_23-2148503261.jpg?t=st=1732158534~exp=1732162134~hmac=96a8d266cabf84d7e0e282725d26a428ad1a204c9189f71cbd92521682cb0161&w=740",
+                        "https://img.freepik.com/foto-gratis/hombre-escena-urbana-mochila_158595-2405.jpg?t=st=1732158466~exp=1732162066~hmac=615138ae274b3b3f8e45e710fd80d42de3a7348914458fc9d54af2c6e3670fea&w=360"
+                      ],
         "shortDescription": "Abrigo largo de corte elegante.",
         "longDescription": "Abrigo largo y sofisticado, perfecto para las noches frías. Diseño atemporal que combina elegancia y funcionalidad.",
         "availableSizes": ["S", "M", "L"],

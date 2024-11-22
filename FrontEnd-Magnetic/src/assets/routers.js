@@ -9,8 +9,8 @@ const routes = [
     component: () => import('../views/Magnetic.vue') 
   },
   {
-    path: '/categoria/:name/:seccion/:tipo',
-    name: 'categoria',
+    path: '/categoria/:genero/:seccion/:categoria',
+    name: 'ProductosPorCategoria',
     component: () => import('../layouts/Categoria.vue'),
     // Puedes añadir meta data para manejar permisos, títulos, etc
     meta: {
