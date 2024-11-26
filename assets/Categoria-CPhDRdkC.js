@@ -1,1 +1,0 @@
-import{e as s,k as t,d as a}from"./index-BznUCV5g.js";const o={class:"contenedor"},l={__name:"Categoria",setup(r){return(n,e)=>(a(),s("div",o,e[0]||(e[0]=[t("h1",null," estas son las categorias ",-1)])))}};export{l as default};
